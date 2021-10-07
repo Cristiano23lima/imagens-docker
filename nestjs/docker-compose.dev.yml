@@ -1,3 +1,4 @@
+#run commnad 'docker-compose -f docker-compose.dev.yml up -d'
 version: '3.7'
 
 services:
