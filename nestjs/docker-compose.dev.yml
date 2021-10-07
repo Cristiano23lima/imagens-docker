@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  nest:
+    image: node:15
+    container_name: nest
+    tty: true
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    networks:
+      - dev-network
+    volumes:
+      - .:/usr/src/app
+    working_dir: /usr/src/app
+    command: bash -c "yarn install && yarn run start:dev"
+networks:
+  dev-network:
+    driver: bridge
